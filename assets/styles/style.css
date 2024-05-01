@@ -1,0 +1,429 @@
+/* ========================== HungNQ ==============================
+ Single page Porfolio website
+ */
+@import "refresh.css";
+@import "fonts.css";
+@import "animations.css";
+@import "utils.css";
+@import "variables.css";
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    border-color: hsl(var(--border)/.4);
+    border-bottom-width: 1px;
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    top: 0;
+
+    a {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s;
+        text-decoration: none;
+        color: hsl(var(--foreground));
+
+        &:visited {
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: hsl(var(--foreground)/.8);
+        }
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 3rem;
+        align-items: center;
+
+        .personal-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: center;
+            align-items: start;
+
+            .small-info {
+                font-size: 12px;
+
+                i.fi {
+                    margin-right: 4px
+                }
+            }
+        }
+
+        ul.nav-navigation {
+            display: flex;
+            gap: 24px;
+
+            li {
+                list-style: none none;
+
+                a {
+                    color: hsl(var(--foreground)/.6);
+                    font-size: 14px;
+
+                    .active {
+                        color: hsl(var(--foreground));
+                    }
+                }
+            }
+
+        }
+    }
+
+
+}
+
+#about-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 8rem;
+
+    .short-info {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s;
+
+        .job-title {
+            text-transform: uppercase;
+            font-size: 12px
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brief-description {
+            max-width: 25rem;
+        }
+
+        .action {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+    }
+
+    .personal-image img {
+        border-radius: 50%;
+        max-width: 288px;
+    }
+
+}
+
+#skills {
+    padding-top: 12rem;
+
+    .grid-skills {
+        margin-top: 3rem;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .skill-card {
+        width: 180px;
+        height: 180px;
+        border-width: 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s;
+        border-radius: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.1) 0 1px 2px -1px;
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
+
+        strong {
+            line-height: 2;
+            font-weight: 500;
+        }
+    }
+}
+
+#projects {
+    .project-grid {
+        margin-left: 8rem;
+        margin-right: 8rem;
+        margin-top: 2rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+        .project-card {
+            border: 1px solid hsl(var(--border)/.4);
+            border-radius: calc(var(--radius) + 4px);
+            background-color: hsl(var(--card));
+            color: hsl(var(--card-foreground));
+            box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.1) 0 1px 2px -1px;
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            letter-spacing: -.025em;
+            line-height: 1;
+            font-weight: 600;
+        }
+
+        .project-description {
+            margin-top: 0.25rem;
+            color: hsl(var(--muted-foreground));
+            font-size: .875rem;
+            line-height: 1.25rem;
+            padding-bottom: 1.5rem;
+            -webkit-line-clamp: 6;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 138px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+
+        }
+
+        .project-sub {
+            color: hsl(var(--muted-foreground));
+            font-size: .875rem;
+            line-height: 1.25rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: start;
+        }
+    }
+}
+
+#recommendations {
+    .recommendation-grid {
+        margin-left: 8rem;
+        margin-right: 8rem;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        row-gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+
+        .recommendation-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .recommendation-text {
+                font-style: italic;
+                font-size: 1rem;
+            }
+
+            .recommendation-name {
+                text-align: right;
+            }
+        }
+    }
+
+    .recommendation-form {
+        max-width: 100%;
+        margin-left: 12rem;
+        margin-right: 12rem;
+
+        input, textarea {
+            width: 100%;
+
+            display: flex;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            background-color: hsl(var(--background));
+            padding: .5rem .75rem;
+
+            border-color: hsl(var(--input));
+            border-width: 1px;
+
+            border-radius: calc(var(--radius) - 2px);
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-size: .875rem;
+            line-height: 1.25rem;
+
+            &:focus-visible {
+                box-shadow: rgb(255, 255, 255) 0 0 0 2px, rgb(161, 161, 170) 0 0 0 4px, rgba(0, 0, 0, 0) 0 0 0 0;
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+        }
+
+
+        input {
+            height: 2.5rem;
+
+        }
+
+        .hint {
+            margin-top: 8px;
+            color: hsl(var(--muted-foreground));
+            font-size: .875rem;
+            line-height: 1.25rem;
+        }
+
+        label {
+            line-height: 1;
+            font-weight: 500;
+            font-size: .875rem;
+            border-color: hsl(var(--border));
+        }
+
+        button[type="submit"] {
+            padding: .5rem 3rem;
+            margin-top: 3rem;
+        }
+    }
+}
+
+#black-frame {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 50;
+    inset: 0;
+    position: fixed;
+}
+
+#confirm-dialog[open=""] {
+    position: fixed;
+    pointer-events: auto;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background-color: hsl(var(--background));
+    border-width: 1px;
+    gap: 1rem;
+    z-index: 50;
+    width: 100%;
+    display: grid;
+    transition-duration: .2s;
+    margin: auto;
+    max-width: 425px;
+
+    .brief-description {
+        font-size: .875rem;
+        line-height: 1.25rem;
+        color: hsl(var(--muted-foreground));
+    }
+
+
+    button {
+        padding: .5rem 1rem;
+    }
+
+}
+
+.to-the-top {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.red-star {
+    color: red;
+}
+
+#toast-anchor {
+    position: fixed;
+    padding: 1rem;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    list-style-type: none;
+    z-index: 100;
+
+    ol {
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        top: auto;
+        width: 100%;
+        max-height: 100vh;
+        z-index: 100;
+    }
+
+    li {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s;
+        color: hsl(var(--foreground));
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.1) 0 4px 6px -4px;
+        padding: 1.5rem 2rem 1.5rem 1.5rem;
+        background-color: hsl(var(--background));
+
+        border-width: 1px;
+        border-radius: calc(var(--radius) - 2px);
+        overflow: hidden;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        position: relative;
+        pointer-events: auto;
+
+        &>div {
+            gap: .25rem;
+            display: grid;
+            font-size: .875rem;
+        }
+
+        &> button {
+            opacity: 0;
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+            transition-duration: .15s;
+            color: hsl(var(--foreground)/.5);
+            padding: .25rem;
+            border-radius: calc(var(--radius) - 2px);
+            top: .5rem;
+            right: .5rem;
+            position: absolute;
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+            cursor: pointer;
+            text-transform: none;
+
+            &> i  {
+                font-size: 10px;
+            }
+
+            &:hover {
+                color: hsl(var(--foreground));
+            }
+        }
+
+        &:hover > button {
+            opacity: 1;
+        }
+
+    }
+}
+

@@ -1,0 +1,98 @@
+
+.mt-7 {
+    margin-top: 2rem
+}
+
+.mb-3 {
+    margin-bottom: 1rem
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.main-layout {
+    margin-top: 8rem;
+    padding: 1rem;
+    overflow: auto;
+}
+
+section {
+    margin-top: 6rem;
+    padding: 8rem 6rem 0 6rem;
+
+    &.border {
+        border-width: 1px;
+
+    }
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 4px;
+    background-color: #000;
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--border)/.4);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding: .5rem 1rem;
+    white-space: nowrap;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+}
+
+button:not(.transparent) {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    color: hsl(var(--primary-foreground));
+
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    -webkit-appearance: button;
+    background-image: none;
+    cursor: pointer;
+    text-transform: none;
+    border-radius: calc(var(--radius) - 2px);
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    display: inline-flex;
+    background-color: #000;
+    text-align: center;
+
+    &:hover {
+        background-color: hsl(var(--primary)/.9);
+    }
+
+    &:focus-visible {
+        box-shadow: rgb(255, 255, 255) 0 0 0 2px, rgb(161, 161, 170) 0 0 0 4px, rgba(0, 0, 0, 0) 0 0 0 0;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+}
+
+.text-xl {
+    font-size: 1.5rem;
+}
+
