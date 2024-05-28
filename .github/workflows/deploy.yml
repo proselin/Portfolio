@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '18'  # Use the Node.js version your project requires
 
-      - name: Install dependencies
-        run: npm install
+#      - name: Install dependencies
+#        run: npm install
 
       - name: Build project
         run: npm run build  # Adjust this command if your project doesn't use a build step
